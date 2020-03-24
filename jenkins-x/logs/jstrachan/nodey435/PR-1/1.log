@@ -1,0 +1,130 @@
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-6bddq[0m
+{"level":"warn","ts":1585036517.4291587,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585036517.4297779,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-stbnl[0m
+{"level":"warn","ts":1585036517.879388,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585036517.8810215,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-nodey435-pr-1-pr-buil-kl5nv-8plwb[0m
+{"level":"warn","ts":1585036525.0142672,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585036526.1040616,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/nodey435.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5cd6e3fb2acb830525f46b85b3558af81032df0a,1:a1fcefc56ad81a4d4fa095a7962eb3b4687644f0
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow a1fcefc56ad81a4d4fa095a7962eb3b4687644f0: 5cd6e3fb2acb830525f46b85b3558af81032df0a:
+DEBUG: ran git fetch --unshallow origin a1fcefc56ad81a4d4fa095a7962eb3b4687644f0: 5cd6e3fb2acb830525f46b85b3558af81032df0a: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 5cd6e3fb2acb830525f46b85b3558af81032df0a
+DEBUG: ran git reset --hard 5cd6e3fb2acb830525f46b85b3558af81032df0a in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge a1fcefc56ad81a4d4fa095a7962eb3b4687644f0
+DEBUG: ran git merge a1fcefc56ad81a4d4fa095a7962eb3b4687644f0 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 5cd6e3fb2acb830525f46b85b3558af81032df0a..HEAD
+Merged SHA a1fcefc56ad81a4d4fa095a7962eb3b4687644f0 with commit message 'Update index.html' into base branch master
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Jun 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.368s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0324 07:55:33.259545      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0324 07:55:33.270837      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0324 07:55:33.358650      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2020/03/24 07:55:33 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0002] Downloading base image node:9-slim           
+2020/03/24 07:55:34 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] Executing 0 build triggers                   
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] Using files from context: [/workspace/source] 
+[36mINFO[0m[0003] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0003] Taking snapshot of full filesystem...        
+[36mINFO[0m[0003] ENV PORT 8080                                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] EXPOSE 8080                                  
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] WORKDIR /usr/src/app                         
+[36mINFO[0m[0003] cmd: workdir                                 
+[36mINFO[0m[0003] Changed working directory to /usr/src/app    
+[36mINFO[0m[0003] Creating directory /usr/src/app              
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] Using files from context: [/workspace/source] 
+[36mINFO[0m[0003] COPY . .                                     
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] CMD ["npm", "start"]                         
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+2020/03/24 07:55:36 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/03/24 07:55:36 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/03/24 07:55:36 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/03/24 07:55:36 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/03/24 07:55:36 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/03/24 07:55:39 pushed blob: sha256:7a6fa32f0ac783e484224139a78785785d678549899365a21fa34af64976af74
+2020/03/24 07:55:39 pushed blob: sha256:6264a3911d5bc617cc72e61aaefd3ccab556eca843c719296bb9247062e6d89d
+2020/03/24 07:55:40 pushed blob: sha256:8c2645a04a1d9c8ee0cc87c063babd1f65259b22a1bac4a704ed9d344cd55dbb
+2020/03/24 07:55:41 gcr.io/*********-multicluster/nodey435:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:52b9cb38490aeb5328f63fe3d76f669492588788c37c61297ab80b15252e3d49 size: 1404
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/*********-multicluster\/nodey435|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mjstrachan-nodey435-pr-1-pr-buil-kl5nv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: james.strachan@gmail.com
+Created environment *********-nodey435-pr-1
+Namespace **-*********-nodey435-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 35.240.16.53.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/*********-multicluster/nodey435
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+adding helm values file /workspace/source/charts/preview/**Requirements.values.yaml for namespace **-*********-nodey435-pr-1
+Updating PipelineActivities *********-nodey435-pr-1-1 which has status Running
+Preview application is now available at: http://nodey435-**-*********-nodey435-pr-1.35.240.16.53.nip.io
+WARNING: Failed to find the service nodey435 : failed to find service nodey435 in namespace **-*********-nodey435-pr-1: services "nodey435" not found
